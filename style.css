@@ -1,3 +1,5 @@
+
+
 *{
   margin:0;
   padding:0;
@@ -11,22 +13,21 @@ body{
   line-height:1.4;
 }
 
-/* ===== TOP BAR ===== */
+/* TOP BAR */
 .topbar{
   display:flex;
   justify-content:space-between;
-  flex-wrap:wrap;
+  align-items:center;
   gap:10px;
   padding:10px;
   border-bottom:2px solid #111;
+  flex-wrap:wrap;
 }
 
-.topbar-left,
-.topbar-nav,
-.topbar-right{
+.topbar-nav{
   display:flex;
   gap:8px;
-  align-items:center;
+  flex-wrap:wrap;
 }
 
 .topbar-nav a{
@@ -37,25 +38,21 @@ body{
   padding:4px 6px;
 }
 
-/* ===== NOTICE ===== */
-.notice{
-  display:flex;
-  justify-content:space-between;
-  padding:10px;
-  border-bottom:1px solid #ddd;
-  font-size:12px;
-  text-transform:uppercase;
-}
 
-/* ===== MAIN LAYOUT ===== */
+
+/* MAIN LAYOUT: sidebar + content */
 .layout{
-  display:grid;
-  grid-template-columns:220px 1fr;
+  display:flex;
   gap:12px;
   padding:12px;
 }
 
-/* ===== SIDEBAR ===== */
+
+.content{
+  flex:1;
+}
+
+/* SIDEBAR PANELS */
 .panel{
   border:1px solid #ddd;
   padding:10px;
@@ -68,9 +65,25 @@ body{
   font-weight:bold;
   border-bottom:2px solid #111;
   margin-bottom:8px;
+  padding-bottom:6px;
 }
 
-/* ===== CONTENT BLOCKS ===== */
+.menu{
+  list-style:none;
+}
+
+.menu li{
+  padding:4px 0;
+}
+
+/* “KEY VALUE” simple grid */
+.kv{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:6px 10px;
+}
+
+/* CONTENT BLOCKS */
 .block{
   border:1px solid #ddd;
   padding:14px;
@@ -79,6 +92,7 @@ body{
 
 .block-heading{
   display:flex;
+  align-items:center;
   gap:10px;
   margin-bottom:10px;
 }
@@ -89,7 +103,17 @@ body{
   background:#111;
 }
 
-/* ===== IMAGES ===== */
+/* EXHIBIT TWO COLUMN */
+.two-col{
+  display:flex;
+  gap:12px;
+}
+
+.two-col > div{
+  flex:1;
+}
+
+/* IMAGE FRAME */
 .frame{
   border:2px solid #111;
   padding:8px;
@@ -103,9 +127,54 @@ body{
   display:block;
 }
 
+/* MINI SECTIONS */
+.mini{
+  border:1px solid #ddd;
+  padding:10px;
+  margin-bottom:10px;
+  background:#fafafa;
+}
+
+/* LISTS */
+.bullets{
+  padding-left:18px;
+}
+
+/* META */
+.meta{
+  border:1px solid #111;
+  padding:8px;
+  margin-top:10px;
+}
+
+.meta-row{
+  display:flex;
+  justify-content:space-between;
+  border-bottom:1px dotted #ccc;
+  padding:4px 0;
+}
+
+/* DOCS */
+.doc{
+  border-top:1px dotted #ccc;
+  padding:10px 0;
+}
+
+.doc-title a{
+  color:#111;
+}
+
+/* WITNESSES */
+.witness{
+  border:1px solid #ddd;
+  padding:10px;
+  margin-top:10px;
+}
+
 .witness-row{
   display:flex;
   gap:10px;
+  align-items:flex-start;
 }
 
 .witness-row img{
@@ -116,11 +185,7 @@ body{
   background:#f5f5f5;
 }
 
-/* ===== TEXT ===== */
-p, li, h1, h2, h3, a, span, summary{
-  padding:2px 4px;
-}
-
+/* TEXT */
 .subtitle,
 .caption,
 .lead,
